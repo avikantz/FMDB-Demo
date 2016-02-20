@@ -12,6 +12,7 @@
 		599199001C787B1300E275C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599198FF1C787B1300E275C4 /* ViewController.m */; };
 		599199021C787B1300E275C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 599199011C787B1300E275C4 /* Assets.xcassets */; };
 		599199051C787B1300E275C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599199031C787B1300E275C4 /* Main.storyboard */; };
+		5991990E1C78880100E275C4 /* univ.db in Resources */ = {isa = PBXBuildFile; fileRef = 5991990D1C78880100E275C4 /* univ.db */; };
 		CABCEADB7C601DA9E8804437 /* libPods-FMDB Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0A372619E017EC33CCA3BF /* libPods-FMDB Demo.a */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +27,7 @@
 		599199011C787B1300E275C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		599199041C787B1300E275C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		599199061C787B1300E275C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5991990C1C787BB400E275C4 /* univ.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = univ.db; sourceTree = "<group>"; };
+		5991990D1C78880100E275C4 /* univ.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = univ.db; sourceTree = "<group>"; };
 		68F54F234CFF428C127E593D /* Pods-FMDB Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMDB Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMDB Demo/Pods-FMDB Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0A372619E017EC33CCA3BF /* libPods-FMDB Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMDB Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,7 +89,7 @@
 		599198FB1C787B1300E275C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5991990C1C787BB400E275C4 /* univ.db */,
+				5991990D1C78880100E275C4 /* univ.db */,
 				599198FC1C787B1300E275C4 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -162,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5991990E1C78880100E275C4 /* univ.db in Resources */,
 				599199021C787B1300E275C4 /* Assets.xcassets in Resources */,
 				599199051C787B1300E275C4 /* Main.storyboard in Resources */,
 			);
