@@ -47,6 +47,15 @@
 	
 	if (self.textField.stringValue.length > 0) {
 		[[NSUserDefaults standardUserDefaults] setObject:self.textField.stringValue forKey:@"lastQuery"];
+		
+		NSMutableArray *commands = [[[NSUserDefaults standardUserDefaults] objectForKey:@"commands"] mutableCopy];
+		if (commands == nil)
+			commands = [NSMutableArray new];
+		
+		[commands addObject:self.textField.stringValue];
+		
+		[[NSUserDefaults standardUserDefaults] setObject:commands forKey:@"commands"];
+		
 		[self fetchData];
 	}
 	
@@ -86,6 +95,8 @@
 		[columnNames addObject:cname];
 		
 		NSTableColumn *tableColumn = [[NSTableColumn alloc] initWithIdentifier:cname];
+		tableColumn.headerCell.font = [NSFont fontWithName:@"Menlo-Regular" size:11.f];
+		tableColumn.headerCell.alignment = NSTextAlignmentCenter;
 		tableColumn.title = cname;
 		
 		[self.tableView addTableColumn:tableColumn];
@@ -128,13 +139,38 @@
 	
 	NSDictionary *dict = [results objectAtIndex:row];
 	
-	return [dict valueForKey:colName];
+	NSString *valueString = [NSString stringWithFormat:@"%@", [dict valueForKey:colName]];
+	
+	NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:valueString];
+	[name setAttributes:@{NSFontAttributeName: [NSFont fontWithName:@"Menlo-Regular" size:11.f]} range:NSMakeRange(0, name.length)];
+	
+	return name;
 }
 
 #pragma mark - Table view delegate
 
 - (BOOL)tableView:(NSTableView *)tableView shouldSelectTableColumn:(NSTableColumn *)tableColumn {
 	return NO;
+}
+
+#pragma mark - Command selection delegate
+
+- (void)didSelectCommand:(NSString *)command {
+	
+	self.textField.stringValue = command;
+	[self textFieldDidReturn:nil];
+	
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
+	
+	if ([segue.identifier isEqualToString:@"showCommandsSegue"]) {
+		CommandsViewController *cvc = [segue destinationController];
+		cvc.delegate = self;
+	}
+	
 }
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CommandsViewController.h"
 
-@interface ViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
+@interface ViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, CommandSelectionDelegate>
 
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSTextField *textField;
